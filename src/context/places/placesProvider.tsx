@@ -11,7 +11,7 @@ const INITIAL_STATE: PlacesStates = {
 
 }
 
-const placesProvider = () =>{
+const PlacesProvider = () =>{
 
 
     return{}
