@@ -5,6 +5,6 @@ export interface PlacesContextProps {
   userLocation?: [number, number];
 }
 
-export const placesContext = createContext<PlacesContextProps>(
+export const PlacesContext = createContext<PlacesContextProps>(
   {} as PlacesContextProps);
 
