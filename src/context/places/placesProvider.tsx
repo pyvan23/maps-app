@@ -12,7 +12,7 @@ const INITIAL_STATE: PlacesStates = {
 
 }
 
-const PlacesProvider = () =>{
+ export const PlacesProvider = () =>{
 
 
     return(<PlacesContext.Provider value={{isLoading:false,
