@@ -3,7 +3,7 @@
 
 
 
-const MapsProvider = () =>{
+export const MapsProvider = () =>{
 
 
     return{}

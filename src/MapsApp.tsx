@@ -3,8 +3,8 @@ import { PlacesProvider } from './context/places/PlacesProvider'
 
 export const MapsApp = () => {
   return (
-    <PlacesProvider.>
-        <h1>Hola mundo</h1>
+    <PlacesProvider>
+        <h1>maps </h1>
     </PlacesProvider>
   )
 }
