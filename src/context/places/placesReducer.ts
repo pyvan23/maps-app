@@ -9,7 +9,7 @@ import { PlacesStates } from './PlacesProvider';
 
 type PlacesAction = { type: 'userLocation', payload: [number, number] };
 
-export const placesProvider = (state: PlacesStates, action: PlacesAction): PlacesStates => {
+export const placesReducer = (state: PlacesStates, action: PlacesAction): PlacesStates => {
 
 
     switch (action.type) {
