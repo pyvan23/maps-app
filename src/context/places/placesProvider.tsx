@@ -1,3 +1,5 @@
+//El estado es la informacion que nosotros guardamos en memoria
+
 import { PlacesContext } from './PlacesContext';
 export interface PlacesStates {
   isLoading: boolean;
