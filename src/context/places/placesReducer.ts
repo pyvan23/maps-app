@@ -12,6 +12,18 @@ type PlacesAction = { type: 'userLocation', payload: [number, number] };
 export const placesProvider = (state: PlacesStates, action: PlacesAction): PlacesStates => {
 
 
-    
+    switch (action.type) {
+        case 'userLocation':
+            return {
+                ...state,
+                isLoading: false,
+                userLocation: action.payload
+
+            }
+
+
+        default:
+            return state
+    }
 
 }
