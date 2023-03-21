@@ -1,7 +1,8 @@
 //El estado es la informacion que nosotros guardamos en memoria
 
 import { useEffect, useReducer } from 'react';
-import { PlacesContext } from './PlacesContext';
+import { getUserLocation } from '../../helpers/getUserLocation';
+import { PlacesContext } from './placesContext';
 import { placesReducer } from './placesReducer';
 
 export interface PlacesStates {
@@ -23,10 +24,11 @@ interface Props {
 export const PlacesProvider = ({ children }: Props) => {
 
   const [state, dispatch] = useReducer(placesReducer, INITIAL_STATE);
+
   //al no tener dependencias el useEffect se disparara solo una vez, cuando el PlacesProvider sea montado
 
   useEffect(() => {
-    
+    getUserLocation().then(  lngLat=> dispatch({type:'userLocation', payload: lngLat }))
   }, [])
   
 
