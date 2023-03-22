@@ -3,6 +3,7 @@
 import { useEffect, useReducer } from 'react';
 import { PlacesContext } from './PlacesContext';
 import { placesReducer } from './placesReducer';
+import { getUserLocation } from '../../helpers/getUserLocation';
 
 export interface PlacesStates {
   isLoading: boolean;
@@ -26,7 +27,7 @@ export const PlacesProvider = ({ children }: Props) => {
   //al no tener dependencias el useEffect se disparara solo una vez, cuando el PlacesProvider sea montado
 
   useEffect(() => {
-    
+    getUserLocation().then(longlat => dispatch({type:'userLocation',payload:longlat}))
   }, [])
   
 
