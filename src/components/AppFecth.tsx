@@ -20,25 +20,32 @@ function AppFecth(): JSX.Element {
   const fetchCards = async () => {
 
     if (searchTerm === "") {
+
       const response = await fetch(`https://api.pokemontcg.io/v2/cards?page=${page}&pageSize=30`);
       const data = await response.json();
       setCards(data.data);
+
     } else {
       const results = await searchCards(searchTerm);
       setCards(results);
     }
   };
   useEffect(() => {
+
     fetchCards();
+    
   }, [page, searchTerm]);
 
   async function searchCards(query: string): Promise<Card[]> {
+
     const response = await fetch(`https://api.pokemontcg.io/v2/cards?q=name:${query}`);
     const data = await response.json();
     return data.data;
+
   }
 
   const handleSearch = (): void => {
+
     setSearchTerm(query);
     setPage(1);
 
@@ -48,11 +55,11 @@ function AppFecth(): JSX.Element {
   return (
     <div className="container">
       <h1 className="text-center">Pokemon TCG Cards</h1>
-      <div className="d-flex justify-content-center mt-3">
-        <button onClick={() => setPage(page - 1)} disabled={page === 1} className="btn btn-primary mr-3">
-          Previous
+      <div className="d-flex justify-start-0 ">
+        <button onClick={() => setPage(page - 1)} disabled={page === 1} className="btn btn-primary m-md-2">
+          Back
         </button>
-        <button onClick={() => setPage(page + 1)} className="btn btn-primary">
+        <button onClick={() => setPage(page + 1)} className="btn btn-primary  m-md-2">
           Next
         </button>
       </div>
