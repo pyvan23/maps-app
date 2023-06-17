@@ -1,8 +1,10 @@
 import AppFecth from "../components/AppFecth"
 import { MapView } from "../components/MapView"
 import { useContext } from "react";
-import { PlacesContext } from "../context/places/PlacesContext";
+
 import { Isloading } from "../components/Isloading";
+import { PlacesContext } from "../context/places/PlacesContext";
+
 
 
 
